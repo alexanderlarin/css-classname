@@ -1,0 +1,39 @@
+{
+  "name": "css-classname",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/*.js",
+    "test:watch": "npm run test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexanderlarin/css-classname.git"
+  },
+  "keywords": [
+    "css",
+    "css-modules",
+    "scss",
+    "style",
+    "styles",
+    "classes",
+    "classname",
+    "classnames",
+    "react",
+    "cx"
+  ],
+  "author": "Alexander Larin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexanderlarin/css-classname/issues"
+  },
+  "homepage": "https://github.com/alexanderlarin/css-classname#readme",
+  "dependencies": {
+    "lodash": "^4.16.4"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
+  }
+}
