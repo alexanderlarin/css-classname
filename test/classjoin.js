@@ -4,35 +4,45 @@ var classJoin = require('..').classJoin;
 
 
 describe('classJoin', function () {
-
     it('single string param', function () {
         expect(classJoin('container')).to.be.equals('container');
 
+        expect(classJoin('')).to.be.equals('');
         expect(classJoin(undefined)).to.be.equals('');
         expect(classJoin(null)).to.be.equals('');
-        expect(classJoin('')).to.be.equals('');
-        expect(classJoin()).to.be.equals('');
     });
 
-    it('multiple string params', function () {
-        expect(classJoin('container', 'content')).to.be.equals('container content');
-        expect(classJoin('container', undefined, null, '', 'content')).to.be.equals('container content');
+    it('some string params with order', function () {
+        expect(classJoin('container', 'item')).to.be.equals('container item');
+        expect(classJoin('item', 'container')).to.be.equals('item container');
     });
 
-    it('single string array param', function () {
-        expect(classJoin(['container', 'content', undefined, null, '', 'ooh'])).to.be.equals('container content ooh');
+    it('single object param with keys order', function () {
+        expect(classJoin({ container: true, undefined: null })).to.be.equals('container');
+        expect(classJoin({ container: true, item: true })).to.be.equals('container item');
+        expect(classJoin({ item: true, container: true })).to.be.equals('item container');
     });
 
-    it('multiple string array params', function () {
-        expect(classJoin(['container', null, 'content'], ['offside', ''])).to.be.equals('container content offside');
+    it('single array param with order', function () {
+        expect(classJoin(['container', undefined, null, ''])).to.be.equals('container');
+        expect(classJoin(['container', 'item'])).to.be.equals('container item');
+        expect(classJoin(['item', 'container'])).to.be.equals('item container');
     });
 
-    it('string and string array params', function () {
-        expect(classJoin(['container'], 'content', undefined, ['offside', 'ooh'])).to.be.equals('container content offside ooh');
+    it('string array object params with order', function () {
+        expect(classJoin('container', 'border', ['item'], { content: true }))
+            .to.be.equals('container border item content');
+        expect(classJoin('container', ['item'], 'border',  { content: true }))
+            .to.be.equals('container item border content');
+        expect(classJoin('container', 'border', { content: true }, ['item']))
+            .to.be.equals('container border content item');
     });
 
-    it('skip object and numbers params', function () {
-        expect(classJoin(['container', 4, { property1: true }], {
-            property2: false, property3: true }, 0, 1, 2., 'content' )).to.be.equals('container content');
+    it('skips non-string params', function () {
+        expect(classJoin('container', 1, 2, ['item', 3])).to.be.equals('container item');
+    });
+
+    it('not skips objects in array params', function () {
+        expect(classJoin([{ container: true }, 'item'])).to.be.equals('container item');
     });
 });
