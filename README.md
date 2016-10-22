@@ -6,7 +6,7 @@ CSS-CLASSNAME
 
 The purpose of this package is to simplify the combination of [CSS](https://github.com/css-modules/css-modules) class names for React.js components. It is intended for frontend (isomorphic backend) with such technologies as React.js, [Webpack](https://webpack.github.io/), [ES2015](https://babeljs.io/docs/learn-es2015/). But certainly it can also be used for simple frontend development in clean nodejs.
 
-Studying of the [similar projects](https://www.npmjs.com/package/classnames) has shown that most developers complicate the task by too much digging into it, which, in some cases, results in a redundant code and an awkward syntax. Our aim is to avoid this unrequited redundancy and complexity and provide a good functional solution based on a simple and clean code.
+_Studying of the similar projects has shown that most developers complicate the task by too much digging into it, which, in some cases, results in a redundant code and an awkward syntax. Our aim is to avoid this unrequited redundancy and complexity and provide a good functional solution based on a simple and clean code._
 
 ## Motivation
 This package is the replacement for `classSet`, which was originally shipped in the React.js Addons bundle.
@@ -43,7 +43,7 @@ var Button = React.createClass({
 });
 ```
 
-As you can compound `Object`, `Array`, and `String` arguments supporting optionsl `className` props is also simpler since only truthy arguments get included in the result:
+As you can compound `Object`, `Array`, and `String` arguments supporting optional `className` props is also simpler since only truthy arguments get included in the result:
 
 ```js
 var btnClass = classJoin('btn', this.props.className, {
