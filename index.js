@@ -4,40 +4,27 @@
  https://github.com/alexanderlarin/css-classname
 */
 
-var _ = require('lodash');
-
-
 function join() {
     var classNames = [];
-    _.forEach(_.flatten(arguments), function (arg) {
-        if (_.isString(arg) && arg)
+    [].concat.apply([], arguments).forEach(function (arg) {
+        if ((typeof arg === 'string') && arg)
             classNames.push(arg);
     });
     return classNames.join(' ');
 }
 
 function combine(args, handler, map) {
-    const classNames = _.map(args, function (arg) {
-        if (_.isString(arg))
+    const classNames = Array.prototype.map.call(args, function (arg) {
+        if (!arg)
+            return '';
+        if (typeof arg === 'string')
             return map(arg);
-        if (_.isArray(arg))
+        if (Array.isArray(arg))
             return handler(arg);
-        if (_.isObject(arg))
-            return handler(_.keys(_.pickBy(arg)));
+        if (typeof arg === 'object')
+            return handler(Object.keys(arg).filter(function (key) { return arg[key]; }));
     });
     return join(classNames);
-}
-
-function className() {
-    var styles = _.head(arguments);
-    var args = _.tail(arguments);
-
-    return combine(args,
-        function (args) {
-            return className.apply(this, _.concat(styles, args));
-        }, function(arg) {
-            return styles[arg];
-        });
 }
 
 function classJoin() {
@@ -45,7 +32,21 @@ function classJoin() {
         function (args) {
             return classJoin.apply(this, args);
         },
-        _.identity);
+        function (arg) {
+            return arg;
+        });
+}
+
+function className() {
+    var styles = arguments[0];
+    var args = Array.prototype.slice.call(arguments, 1);
+
+    return combine(args,
+        function (args) {
+            return className.apply(this, [].concat(styles, args));
+        }, function(arg) {
+            return styles[arg];
+        });
 }
 
 module.exports = {
