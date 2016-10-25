@@ -1,12 +1,13 @@
-CSS-CLASSNAME
-===========
+# CSS-CLASSNAME
 
 [![Version](http://img.shields.io/npm/v/css-classname.svg)](https://www.npmjs.org/package/css-classname)
 [![Build Status](https://travis-ci.org/alexanderlarin/css-classname.svg?branch=master)](https://travis-ci.org/alexanderlarin/css-classname)
 
 The purpose of this package is to simplify the combination of [CSS](https://github.com/css-modules/css-modules) class names for React.js components. It is intended for frontend (isomorphic backend) with such technologies as React.js, [Webpack](https://webpack.github.io/), [ES2015](https://babeljs.io/docs/learn-es2015/). But certainly it can also be used for simple frontend development in clean nodejs.
 
-_Studying of the similar projects has shown that most developers complicate the task by too much digging into it, which, in some cases, results in a redundant code and an awkward syntax. Our aim is to avoid this unrequited redundancy and complexity and provide a good functional solution based on a simple and clean code._
+Studying of the similar projects has shown that most developers complicate the task by too much digging into it, which, in some cases, results in a redundant code and an awkward syntax. Our aim is to avoid this unrequited redundancy and complexity and provide a good functional solution based on a simple and clean code.
+
+**The package has very lighweight, fast, clean and simple implementation and also has no any external dependencies.**
 
 ## Motivation
 This package is the replacement for `classSet`, which was originally shipped in the React.js Addons bundle.
