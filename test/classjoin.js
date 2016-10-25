@@ -4,6 +4,10 @@ var classJoin = require('..').classJoin;
 
 
 describe('classJoin', function () {
+    it('empty params', function () {
+        expect(classJoin()).to.be.equals('');
+    });
+
     it('single string param', function () {
         expect(classJoin('container')).to.be.equals('container');
 
@@ -43,6 +47,6 @@ describe('classJoin', function () {
     });
 
     it('not skips objects in array params', function () {
-        expect(classJoin([{ container: true }, 'item'])).to.be.equals('container item');
+        expect(classJoin([{ container: true }, { stranger: true }, { content: false }, 'item'])).to.be.equals('container stranger item');
     });
 });

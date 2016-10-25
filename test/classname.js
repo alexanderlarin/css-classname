@@ -15,6 +15,10 @@ describe('className', function () {
         };
     });
 
+    it('empty params', function () {
+        expect(className(styles)).to.be.equals('');
+    });
+
     it('single string param', function () {
         expect(className(styles, 'container')).to.be.equals('mock-container');
 
@@ -62,6 +66,6 @@ describe('className', function () {
     });
 
     it('not skips objects in array params', function () {
-        expect(className(styles, [{ container: true }, 'item'])).to.be.equals('mock-container mock-item');
+        expect(className(styles, [{ container: true }, { stranger: true }, { content: false }, 'item'])).to.be.equals('mock-container mock-item');
     });
 });
