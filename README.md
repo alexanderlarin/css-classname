@@ -1,7 +1,9 @@
 # CSS-CLASSNAME
 
 [![Version](http://img.shields.io/npm/v/css-classname.svg)](https://www.npmjs.org/package/css-classname)
+[![NPM Downloads](https://img.shields.io/npm/dm/css-classname.svg)](https://npmjs.org/package/css-classname)
 [![Build Status](https://travis-ci.org/alexanderlarin/css-classname.svg?branch=master)](https://travis-ci.org/alexanderlarin/css-classname)
+[![License](https://img.shields.io/npm/l/css-classname.svg)](https://npmjs.org/package/css-classname)
 
 The purpose of this package is to simplify the combination of [CSS](https://github.com/css-modules/css-modules) class names for React.js components. It is intended for frontend (isomorphic backend) with such technologies as React.js, [Webpack](https://webpack.github.io/), [ES2015](https://babeljs.io/docs/learn-es2015/). But certainly it can also be used for simple frontend development in clean nodejs.
 
