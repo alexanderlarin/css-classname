@@ -14,7 +14,7 @@ function join() {
 }
 
 function combine(args, handler, map) {
-    const classNames = Array.prototype.map.call(args, function (arg) {
+    var classNames = Array.prototype.map.call(args, function (arg) {
         if (!arg)
             return '';
         if (typeof arg === 'string')
