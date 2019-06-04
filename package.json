@@ -1,6 +1,6 @@
 {
   "name": "css-classname",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Simplest way to combine and join CSS class names",
   "main": "index.js",
   "scripts": {
@@ -32,6 +32,6 @@
   "dependencies": {},
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.1.2"
+    "mocha": "^6.1.4"
   }
 }

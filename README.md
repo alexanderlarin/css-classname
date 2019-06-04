@@ -127,6 +127,7 @@ For more information on usage please visit `test` directory in the project [repo
 
 ## API
 The API package contains the following functions that will have `String` result of combination of arguments CSS class names:
+
 |Function |Arguments |
 |-----------|------------------------------------------------------------------|
 |`classJoin`|`...args: Object|Array|string` &mdash; CSS class names |
@@ -164,7 +165,7 @@ export class MenuComponent extends React.Component {
           { this.props.children }
       </div>
     );
-	}
+  }
 }
 ```
 
