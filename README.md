@@ -130,9 +130,9 @@ The API package contains the following functions that will have `String` result 
 
 |Function |Arguments |
 |-----------|------------------------------------------------------------------|
-|`classJoin`|`...args: Object|Array|string` &mdash; CSS class names |
+|`classJoin`|`...args: Object, Array or String` &mdash; CSS class names |
 |`className`|`styles: Object` &mdash; imported CSS module object
-|           |`...args: Object|Array|string` &mdash; CSS class names |
+|           |`...args: Object, Array or String` &mdash; CSS class names |
 
 **The main difference between `className` and `classJoin` functions is that the first one should have `styles` object as first the parameter and the second shouldn't**
 
